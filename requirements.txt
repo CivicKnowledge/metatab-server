@@ -1,4 +1,4 @@
 six
 unicodecsv
-git+https://github.com/CivicKnowledge/metatab-py.git
-git+https://github.com/CivicKnowledge/metapack.git
+git+https://github.com/CivicKnowledge/metatab-py.git#egg=metatab-py
+git+https://github.com/CivicKnowledge/metapack.git#egg=metapack

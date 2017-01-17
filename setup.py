@@ -40,6 +40,8 @@ classifiers = [
 ]
 
 
+print("!!!!!", [x for x in reversed([str(x.req) for x in install_requires])])
+
 setup(
     name='metatab_server',
     version=ps_meta.__version__,
