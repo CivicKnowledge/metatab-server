@@ -26,8 +26,6 @@ ps_meta = imp.load_source('_meta', 'metatab_server/_meta.py')
 
 packages = find_packages()
 
-tests_require = install_requires = parse_requirements('requirements.txt', session=uuid.uuid1())
-
 classifiers = [
     'Development Status :: 4 - Beta',
     'Intended Audience :: Developers',
@@ -47,12 +45,8 @@ setup(
     long_description=readme,
     packages=packages,
     include_package_data=True,
-    zip_safe=False,
-    install_requires=[x for x in reversed([str(x.req) for x in install_requires])],
-    tests_require=[x for x in reversed([str(x.req) for x in tests_require])],
     entry_points={
         'console_scripts': [
-
         ],
     },
 
