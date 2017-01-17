@@ -8,7 +8,7 @@ Also accepts a JSON list of rows.
 
 """
 from flask import Flask, request, jsonify
-from metatab.parser import TermGenerator, TermParser
+from metatab.parser import TermParser, MetatabDoc
 from metatab.generate import RowGenerator, CsvDataRowGenerator
 
 app = Flask(__name__)
@@ -74,13 +74,11 @@ def parse():
     else:
         raise ClientError(415, 'Bad mime type: {}'.format(content_type))
 
-    term_gen = list(TermGenerator(rg))
-    term_interp = TermParser(term_gen)
+    doc = MetatabDoc(TermParser(rg))
 
-    d = term_interp.as_dict()
+    d = doc.as_dict()
 
-    return jsonify(dict(result=d, errors=term_interp.errors_as_dict()))
-
+    return jsonify(dict(result=d, errors=doc.errors))
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

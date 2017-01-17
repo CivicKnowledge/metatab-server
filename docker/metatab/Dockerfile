@@ -15,4 +15,4 @@ RUN pip install -r /opt/metatab/requirements.txt # v5
 EXPOSE 80
 
 CMD gunicorn -w 4 --max-requests 10 --timeout 300 --access-logfile - --error-logfile - \
--b 0.0.0.0:80 metatab.server:app
+-b 0.0.0.0:80 metatab_server:app

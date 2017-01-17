@@ -1,3 +1,4 @@
 six
+metapack
+metatab
 unicodecsv
-pyyaml
