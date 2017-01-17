@@ -10,7 +10,7 @@ VOLUME /opt/metatab
 
 COPY requirements.txt /opt/metatab/requirements.txt
 
-RUN pip install -r /opt/metatab/requirements.txt # v5
+RUN pip install -r /opt/metatab/requirements.txt
 
 EXPOSE 80
 
