@@ -56,8 +56,8 @@ setup(
     ],
 
     dependency_links=[
-        'git+https://github.com/CivicKnowledge/metatab-py.git#egg=metatab'
-        'git+https://github.com/CivicKnowledge/metapack.git#egg=metapack'
+        'git+https://github.com/CivicKnowledge/metatab-py.git#egg=metatab-0.0.9'
+        'git+https://github.com/CivicKnowledge/metapack.git#egg=metapack-0.0.9'
     ],
 
     entry_points={
