@@ -1,4 +1,1 @@
-six
-unicodecsv
-git+https://github.com/CivicKnowledge/metatab-py.git#egg=metatab
-git+https://github.com/CivicKnowledge/metapack.git#egg=metapack
+.

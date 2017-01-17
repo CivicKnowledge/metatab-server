@@ -40,8 +40,6 @@ classifiers = [
 ]
 
 
-print("!!!!!", [x for x in reversed([str(x.req) for x in install_requires])])
-
 setup(
     name='metatab_server',
     version=ps_meta.__version__,
@@ -49,6 +47,19 @@ setup(
     long_description=readme,
     packages=packages,
     include_package_data=True,
+
+    install_requires=[
+        'flask',
+        'gunicorn==18',
+        'metatab',
+        'metapack'
+    ],
+
+    dependency_links=[
+        'git+https://github.com/CivicKnowledge/metatab-py.git#egg=metatab'
+        'git+https://github.com/CivicKnowledge/matapack.git#egg=metapack'
+    ],
+
     entry_points={
         'console_scripts': [
         ],
@@ -59,7 +70,7 @@ setup(
     url='https://github.com/CivicKnowledge/metatab-server.git',
     license='MIT',
     classifiers=classifiers,
-    install_requires = [x for x in reversed([str(x.req) for x in install_requires])],
+
     extras_require={
         'server': ['flask','bottle'],
         'test': ['datapackage'],
