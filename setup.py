@@ -24,6 +24,8 @@ with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as f:
 
 ps_meta = imp.load_source('_meta', 'metatab_server/_meta.py')
 
+install_requires = parse_requirements('requirements.txt', session=uuid.uuid1())
+
 packages = find_packages()
 
 classifiers = [
@@ -55,6 +57,7 @@ setup(
     url='https://github.com/CivicKnowledge/metatab-server.git',
     license='MIT',
     classifiers=classifiers,
+    install_requires = [x for x in reversed([str(x.req) for x in install_requires])],
     extras_require={
         'server': ['flask','bottle'],
         'test': ['datapackage'],
